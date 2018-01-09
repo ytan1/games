@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width"> 
+	<script type="text/javascript">
+		(function(){
+			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+					console.log('mobile log');
+		
+					var meta = document.getElementsByTagName('meta')[1];
+					var content = document.createAttribute('content');
+					var scale = window.innerWidth/800;
+					content.value = 'width=800, initial-scale=' + scale + ', maximum-scale=' + scale + ',minimum-scale=' + scale + ', user-scalable=0';
+					
+					meta.removeAttribute('content')
+
+					meta.setAttributeNode(content);
+
+					document.getElementsByTagName('head')[0].append(meta);
+			}
+		})(); 
+	</script>
+	<title>tetris</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/fontello.css">
+
+	<script src="http://192.168.0.21:1111/target/target-script-min.js#anonymous"></script>
+</head>
+<body>
+	<div>Please use keyboard to control.<span id="wait"></span></div>
+
+	<div class="square" id="local">
+		<div class="title">My game area</div>
+		<div class="game" id="local_game"></div>
+		<div class="next" id="local_next"></div>
+		<div class="info" id="local_info">
+			<div>Time: <span id="local_time">0</span>s</div>
+			<div>Score: <span id="local_score">0</span></div>
+			<div id="local_result"></div>
+		</div>
+	</div>
+	<div class="square" id="remote">
+		<div class="title">Player2 game area</div>
+		<div class="game" id="remote_game"></div>
+		<div class="next" id="remote_next"></div>
+		<div class="info" id="remote_info">
+			<div>Time: <span id="remote_time">0</span>s</div>
+			<div>Score: <span id="remote_score">0</span></div>
+			<div id="remote_result"></div>
+		</div>
+	</div>
+	<div class="control">
+		<div class="space icon-down" keyvalue = '32'></div>
+		<div class="up icon-firefox" keyvalue = '38'></div>
+		<div class="down icon-down-open" keyvalue = '40'></div>
+		<div class="left icon-left-open" keyvalue = '37'></div>
+		<div class="right icon-right-open" keyvalue = '39'></div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+	<script src="js/square.js"></script>
+	<script src="js/squareFac.js"></script>
+	<script src="js/game.js"></script>
+	<script src="js/local.js"></script>
+	<script src="js/remote.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

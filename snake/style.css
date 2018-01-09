@@ -1,0 +1,30 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+#container{
+	box-sizing: content-box;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 600px;
+	height: 600px;
+	background-color: #7ec0ee;
+	border: 1px solid blue;
+}
+.snake{
+	position: absolute;
+	box-sizing: border-box;
+	width: 6px;
+	height: 6px;
+	border: 1px #fff solid;
+	background-color: orange;
+}
+.food{
+	position: absolute;
+	box-sizing: border-box;
+	width: 6px;
+	height: 6px;
+	border: 1px #fff solid;
+	background-color: red;
+}
